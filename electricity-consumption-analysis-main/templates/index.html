@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Consumption Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Modern Dark Gradient Background */
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        /* Glassmorphism Header */
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient Text for Main Heading */
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 15px;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Premium Dashboard Container */
+        .tableau-container {
+            width: 100%;
+            height: 85vh;
+            min-height: 700px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            /* Glowing border effect */
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                        0 0 30px rgba(56, 189, 248, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect on container */
+        .tableau-container:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 
+                        0 0 40px rgba(56, 189, 248, 0.2);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            /* Background white so Tableau loads cleanly over the dark theme */
+            background-color: #ffffff; 
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer span {
+            color: #38bdf8;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>⚡ PowerGrid Analytics</h1>
+        <p>Real-time India Electricity Consumption Insights (2019-2020)</p>
+    </div>
+
+    <div class="container">
+        <div class="tableau-container">
+            <iframe src="{{ url }}" title="Tableau Dashboard"></iframe>
+        </div>
+    </div>
+
+    <div class="footer">
+        Project developed by <span>Alok Singh</span> | Powered by Flask & Tableau
+    </div>
+
+</body>
+</html>
